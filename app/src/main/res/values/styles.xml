@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Spinner Theme Style to show black dropdown arrow -->
+    <style name="SpinnerArrowDark" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/black</item> <!-- Arrow color -->
+    </style>
+</resources>
