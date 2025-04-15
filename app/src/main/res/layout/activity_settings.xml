@@ -36,9 +36,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="80dp"
+                    android:layout_marginStart="89dp"
                     android:layout_marginTop="28dp"
-                    android:text="Settings"
+                    android:text="@string/settings"
                     android:textColor="@color/white"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -88,8 +88,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
                     android:backgroundTint="@color/AccentColor"
-                    android:text="Save Settings"
-                    android:textColor="#FFFFFF" />
+                    android:text="@string/saveSetting"
+                    android:textColor="@color/white" />
             </LinearLayout>
 
             <!--Backup/Restore Section -->
@@ -114,18 +114,18 @@
                     android:id="@+id/btnBackup"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="#10B981"
-                    android:text="Backup Transactions"
-                    android:textColor="#FFFFFF" />
+                    android:backgroundTint="@color/AccentColor"
+                    android:text="@string/backupBtn"
+                    android:textColor="@color/white" />
 
                 <Button
                     android:id="@+id/btnRestore"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    android:backgroundTint="#EF4444"
-                    android:text="Restore Transactions"
-                    android:textColor="#FFFFFF" />
+                    android:backgroundTint="@color/red"
+                    android:text="@string/restoreBtn"
+                    android:textColor="@color/white" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

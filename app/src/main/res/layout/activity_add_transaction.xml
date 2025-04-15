@@ -112,7 +112,7 @@
                         android:id="@+id/rbIncome"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Income"
+                        android:text="@string/income"
                         android:textColor="@color/black" />
 
                     <RadioButton
@@ -120,7 +120,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="24dp"
-                        android:text="Expense"
+                        android:text="@string/expense"
                         android:textColor="@color/black" />
                 </RadioGroup>
 
@@ -137,13 +137,13 @@
                     android:id="@+id/btnSave"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
                     android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="24dp"
                     android:backgroundTint="@color/AccentColor"
-                    android:text="Save Transaction"
-                    android:textColor="#FFFFFF"
                     android:paddingStart="24dp"
-                    android:paddingEnd="24dp" />
+                    android:paddingEnd="24dp"
+                    android:text="@string/saveTransaction"
+                    android:textColor="#FFFFFF" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

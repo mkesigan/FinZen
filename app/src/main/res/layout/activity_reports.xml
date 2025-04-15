@@ -33,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="80dp"
                 android:layout_marginTop="35dp"
-                android:text="Reports"
+                android:text="@string/reports"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -50,19 +50,19 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:backgroundTint="#10B981"
-                android:text="Income"
-                android:textColor="#FFFFFF" />
+                android:backgroundTint="@color/AccentColor"
+                android:text="@string/income"
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/btnReportExpense"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginStart="8dp"
-                android:backgroundTint="#EF4444"
-                android:text="Expense"
-                android:textColor="#FFFFFF" />
+                android:layout_weight="1"
+                android:backgroundTint="@color/red"
+                android:text="@string/expense"
+                android:textColor="@color/white" />
         </LinearLayout>
 
         <!--Report List -->

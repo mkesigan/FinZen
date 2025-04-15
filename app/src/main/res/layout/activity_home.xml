@@ -43,7 +43,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Income"
+                android:text="@string/income"
                 android:textColor="@color/PrimaryColor"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -70,7 +70,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Expense"
+                android:text="@string/expense"
                 android:textColor="@color/PrimaryColor"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -97,7 +97,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Balance"
+                android:text="@string/balance"
                 android:textColor="@color/PrimaryColor"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -129,18 +129,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/red"
-            android:text="Expense Transactions"
-            android:textColor="@color/white" />
+            android:text="@string/expenseBtn"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
 
         <Button
             android:id="@+id/btnIncome"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_weight="1"
             android:backgroundTint="@color/AccentColor"
             android:text="Income Transactions"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:textSize="14sp" />
     </LinearLayout>
 
     <!-- Scrollable Transaction List -->
@@ -213,7 +214,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Reports"
+                android:text="@string/reports"
                 android:textColor="@color/black" />
         </LinearLayout>
 
@@ -234,7 +235,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Settings"
+                android:text="@string/settings"
                 android:textColor="@color/black" />
         </LinearLayout>
     </LinearLayout>
