@@ -11,6 +11,7 @@ import android.icu.util.Calendar
 import android.os.Build
 import android.os.Bundle
 import android.widget.*
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
@@ -152,29 +153,51 @@ class HomeActivity : AppCompatActivity() {
             layoutParams.setMargins(0, marginPx, 0, marginPx)
             view.layoutParams = layoutParams
 
+            //currency type also added
+            val prefs = getSharedPreferences("app_settings", Context.MODE_PRIVATE)
+            val currency = prefs.getString("currency", "Rs.")
+
             view.findViewById<TextView>(R.id.tvTitle).text = "Title : ${transaction.title}"
             view.findViewById<TextView>(R.id.tvDate).text = "Date : ${transaction.date}"
-            view.findViewById<TextView>(R.id.tvAmount).text = "Amount : Rs.${transaction.amount}"
+            view.findViewById<TextView>(R.id.tvAmount).text = "Amount : $currency ${transaction.amount}"
 
+            // Edit with confirmation
             view.findViewById<ImageButton>(R.id.btnEdit).setOnClickListener {
-                val intent = Intent(this, AddTransaction::class.java)
-                intent.putExtra("isEdit", true)
-                intent.putExtra("editIndex", allTransactions.indexOf(transaction))
-                intent.putExtra("transaction", Gson().toJson(transaction))
-                startActivity(intent)
+                AlertDialog.Builder(this)
+                    .setTitle("Edit Transaction")
+                    .setMessage("Do you want to edit this transaction?")
+                    .setPositiveButton("Yes") { _, _ ->
+                        val intent = Intent(this, AddTransaction::class.java)
+                        intent.putExtra("isEdit", true)
+                        intent.putExtra("editIndex", allTransactions.indexOf(transaction))
+                        intent.putExtra("transaction", Gson().toJson(transaction))
+                        startActivity(intent)
+                    }
+                    .setNegativeButton("Cancel", null)
+                    .show()
             }
 
+
+            //Delete with confirmation
             view.findViewById<ImageButton>(R.id.btnDelete).setOnClickListener {
-                val updatedList = SharedPrefManager.getTransactions(this).toMutableList()
-                val removeIndex = updatedList.indexOf(transaction)
-                if (removeIndex != -1) {
-                    updatedList.removeAt(removeIndex)
-                    SharedPrefManager.saveTransactions(this, updatedList)
-                    allTransactions = updatedList
-                    updateSummary()
-                    displayTransactions(type)
-                }
+                AlertDialog.Builder(this)
+                    .setTitle("Delete Transaction")
+                    .setMessage("Are you sure you want to delete this transaction?")
+                    .setPositiveButton("Delete") { _, _ ->
+                        val updatedList = SharedPrefManager.getTransactions(this).toMutableList()
+                        val removeIndex = updatedList.indexOf(transaction)
+                        if (removeIndex != -1) {
+                            updatedList.removeAt(removeIndex)
+                            SharedPrefManager.saveTransactions(this, updatedList)
+                            allTransactions = updatedList
+                            updateSummary()
+                            displayTransactions(type)
+                        }
+                    }
+                    .setNegativeButton("Cancel", null)
+                    .show()
             }
+
 
             transactionListLayout.addView(view)
         }

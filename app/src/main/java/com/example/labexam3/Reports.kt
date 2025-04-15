@@ -1,5 +1,6 @@
 package com.example.labexam3
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -46,6 +47,10 @@ class Reports: AppCompatActivity() {
     private fun showReport(type: String) {
         reportList.removeAllViews()
 
+        //currency type added
+        val prefs = getSharedPreferences("app_settings", Context.MODE_PRIVATE)
+        val currency = prefs.getString("currency", "Rs.")
+
         val filtered = allTransactions.filter { it.type == type }
 
         // Group by category and sum totals
@@ -75,7 +80,7 @@ class Reports: AppCompatActivity() {
             label.setPadding(0, 0, 0, 6)
 
             val value = TextView(this)
-            value.text = "Total: Rs. %.2f".format(total)
+            value.text = "Total: $currency %.2f".format(total)
             value.setTextColor(Color.DKGRAY)
             value.setTextSize(16f)
 

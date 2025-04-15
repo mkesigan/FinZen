@@ -44,7 +44,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Income"
-                android:textSize="14sp"
+                android:textColor="@color/PrimaryColor"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -70,7 +71,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Expense"
-                android:textSize="14sp"
+                android:textColor="@color/PrimaryColor"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -96,7 +98,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Balance"
-                android:textSize="14sp"
+                android:textColor="@color/PrimaryColor"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView

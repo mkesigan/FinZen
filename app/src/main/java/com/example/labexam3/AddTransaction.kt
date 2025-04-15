@@ -127,6 +127,12 @@ class AddTransaction : AppCompatActivity() {
             return
         }
 
+        //category validation
+        if (category == "Select Category") {
+            Toast.makeText(this, "Please select a valid category", Toast.LENGTH_SHORT).show()
+            return
+        }
+
         val transaction = Transaction(title, amount, category, type, selectedDate)
 
         val list = SharedPrefManager.getTransactions(this)
